@@ -1,0 +1,23 @@
+<%- include('../includes/head.ejs') %>
+    <link rel="stylesheet" href="/css/product.css">
+</head>
+
+<body>
+    <%- include('../includes/navigation.ejs') %>
+    <main>
+        <% if (products.length>0) { %>
+            <ul>
+                <% products.forEach(p => { %>
+                    <li>
+                        <%= p.productData.bookTitle %>(<%= p.productQty %>)
+                    </li>
+                <% }) %>
+            </ul>
+        <% } else { %>
+            <h2>
+                No cart found!
+            </h2>
+        <% } %>
+    </main>
+
+<%- include('../includes/end.ejs') %>
